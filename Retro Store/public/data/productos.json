@@ -1,20 +1,23 @@
 [
     {
         "id": 1234,
-        "nombre": "Notebook Pro",
+        "nombre": "Family game",
         "precio": 12000,
-        "stock": 15
+        "stock": 15,
+        "imagen": "/images/family.jpg"
     },
     {
         "id": 2344,
-        "nombre": "Monitor Curvo",
+        "nombre": "Game Boy",
         "precio": 450000,
-        "stock": 25
+        "stock": 25,
+        "imagen": "/images/gameboy.jpg"
     },
     {
         "id": 2545,
-        "nombre": "Teclado Mecánico",
+        "nombre": "Pinball Terminator",
         "precio": 15000,
-        "stock": 50
+        "stock": 50,
+        "imagen": "/images/terminator.jpg"
     }
 ]

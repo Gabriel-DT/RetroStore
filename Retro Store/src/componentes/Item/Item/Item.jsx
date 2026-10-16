@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styles from './Item.module.css'
 
 // Recibe las props usando destructuring
-export function Item({ id, nombre, precio, imagen, stock }) {
+export function Item({ id, nombre, precio, stock, imagen }) {
     const [cantidad, setCantidad] = useState(0);
     const [esFavorito, setEsFavorito] = useState(false)
 
@@ -30,7 +30,7 @@ export function Item({ id, nombre, precio, imagen, stock }) {
         setEsFavorito(!esFavorito);
     }
 
-
+    console.log("imagen recibida:", imagen, nombre);
     return (
         <div className={styles.card}>
             <div className={styles.cardTitle}>
@@ -41,6 +41,7 @@ export function Item({ id, nombre, precio, imagen, stock }) {
             </div>
             <p>Precio: ${precio}</p>
             <p>Stock disponible: {stock}</p>
+            <img src={imagen} className={styles.imagen} alt="" />
             <div className={styles.contador}>
                 <button onClick={decrementar}>-</button>
                 <p style={{ margin: '0 10px' }}>{cantidad}</p>

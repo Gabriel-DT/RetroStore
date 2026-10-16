@@ -1,0 +1,45 @@
+.card {
+    background: #f8f4ef;
+    border: 1px solid #b9c4c9;
+    border-radius: 12px;
+    padding: 18px 14px 20px;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 10px rgba(31, 29, 26, 0.08);
+    box-sizing: border-box;
+}
+
+.cardTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cardTitle h3 {
+    margin: 0;
+    color: #1f2a30;
+}
+
+.contador {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.favorito {
+    font-size: 24px;
+    cursor: pointer;
+    color: #bb7449;
+}
+
+.card button {
+    background: #4d6d7a;
+    border: 1px solid #324f5a;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+    color: #f2f6f7;
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "nombre": "Ana",
+        "email": "ana@ejemplo.com",
+        "puesto": "Diseñadora",
+        "foto": "/images/avatar2.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Carlos",
+        "email": "carlos@ejemplo.com",
+        "puesto": "Desarrollador",
+        "foto": "/images/avatar1.jpg"
+    }
+    ,
+    {
+        "id": 3,
+        "nombre": "Juan",
+        "email": "juan@ejemplo.com",
+        "puesto": "QA",
+        "foto": "/images/avatar1.jpg"
+    }
+]

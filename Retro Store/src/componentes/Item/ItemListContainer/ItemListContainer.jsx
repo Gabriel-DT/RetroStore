@@ -1,6 +1,6 @@
 // El Cerebro (ItemListContainer): Es el componente contenedor. Su única misión es tener la lógica y conseguir los datos.
 
-import { ItemList } from "../ItemList/Itemlist";
+import { ItemList } from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
 
 

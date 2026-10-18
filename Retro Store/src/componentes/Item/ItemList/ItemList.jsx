@@ -7,6 +7,7 @@ export function ItemList({ productos, mensaje }) {
     return (
         <>
         <h2>{mensaje}</h2>
+        <br></br>
         <div className={styles.cardList}>
             {productos.map(prod => (
                 <Item key={prod.id} {...prod} />

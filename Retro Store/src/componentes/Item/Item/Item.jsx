@@ -30,7 +30,6 @@ export function Item({ id, nombre, precio, stock, imagen }) {
         setEsFavorito(!esFavorito);
     }
 
-    console.log("imagen recibida:", imagen, nombre);
     return (
         <div className={styles.card}>
             <div className={styles.cardTitle}>

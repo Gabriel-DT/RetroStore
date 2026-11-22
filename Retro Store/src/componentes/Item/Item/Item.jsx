@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import styles from './Item.module.css'
+import { useCart } from "../../../context/CartContext";
 
 // Recibe las props usando destructuring
 export function Item({ id, nombre, precio, stock, imagen }) {
     const [cantidad, setCantidad] = useState(0);
     const [esFavorito, setEsFavorito] = useState(false)
 
-    
+    const { addToCart } = useCart(); // Obtengo la función del contexto para agregar al carrito
 
     const incrementar = () => {
         if (cantidad < stock) {
@@ -23,6 +24,12 @@ export function Item({ id, nombre, precio, stock, imagen }) {
     };
 
     const CompraClick = () => {// Quiero que se ejecute cuando le doy clic
+        alert(`¡Agregaste ${cantidad} unidades de ${nombre} al carrito!`);
+    };
+
+    const handleAddToCart = () => {
+        addToCart({ id, nombre, precio, stock, imagen }, cantidad); // Agrego el producto al carrito usando la función del contexto
+        
         alert(`¡Agregaste ${cantidad} unidades de ${nombre} al carrito!`);
     };
 
@@ -47,7 +54,7 @@ export function Item({ id, nombre, precio, stock, imagen }) {
                 <button onClick={incrementar}>+</button>
             </div>
             {/* Cuando le boton detecta un clic (onClick), se ejecuta la función */}
-            <button onClick={CompraClick}>Comprar</button>
+            <button onClick={handleAddToCart}>Comprar</button>
         </div>
     )
 }

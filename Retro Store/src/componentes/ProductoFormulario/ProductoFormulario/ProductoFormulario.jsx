@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ProductoFormulario.module.css';
 
-export function FormularioProducto({ datosForm, manejarCambio, manejarEnvio }) {
+export function FormularioProducto({ datosForm, manejarCambio, manejarEnvio, manejarCambioImagen }) {
 
     return (
         <form className={styles.form} onSubmit={manejarEnvio}>
@@ -51,7 +51,7 @@ export function FormularioProducto({ datosForm, manejarCambio, manejarEnvio }) {
                     className={styles.fileInput}
                     type="file"
                     name="imagen"
-                    onChange={manejarCambio}
+                    onChange={manejarCambioImagen}
                 />
             </div>
 

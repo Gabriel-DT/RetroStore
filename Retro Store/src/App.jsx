@@ -4,7 +4,7 @@ import { ItemListContainer } from './componentes/Item/ItemListContainer/ItemList
 import { FormularioProducto } from './componentes/ProductoFormulario/ProductoFormulario/ProductoFormulario';
 import Productos from './componentes/productos';
 import { FormularioContainer } from './componentes/ProductoFormulario/ProductoFormularioContainer/ProductoFormularioContainer';
-
+import Cart from './componentes/Cart/Cart';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <br></br>
       <ItemListContainer/>
       <FormularioContainer/>
+      <Cart/>
     </Layout>
   );
 }

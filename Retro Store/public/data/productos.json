@@ -4,20 +4,23 @@
         "nombre": "Family game",
         "precio": 12000,
         "stock": 15,
-        "imagen": "/images/family.jpg"
+        "imagen": "/images/family.jpg",
+        "descripcion": "Consola familiar para todas las edades."
     },
     {
         "id": 2344,
         "nombre": "Game Boy",
         "precio": 450000,
         "stock": 25,
-        "imagen": "/images/gameboy.jpg"
+        "imagen": "/images/gameboy.jpg",
+        "descripcion": "Consola portátil de Nintendo, ideal para jugar en cualquier lugar."
     },
     {
         "id": 2545,
         "nombre": "Pinball Terminator",
         "precio": 15000,
         "stock": 50,
-        "imagen": "/images/terminator.jpg"
+        "imagen": "/images/terminator.jpg",
+        "descripcion": "Máquina de pinball con temática de Terminator."
     }
 ]

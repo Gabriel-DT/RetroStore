@@ -19,11 +19,11 @@ const Cart = () => {
     return (
         <div>
             <h1>Carrito de Compras</h1>
-            {cart.map((item) => (
-                <div key={item.id}>
-                    <h2>{item.nombre}</h2>
-                    <p>Precio: ${item.precio}</p>
-                    <p>Cantidad: {item.quantity}</p>
+            {cart.map((producto) => (
+                <div key={producto.id}>
+                    <h2>{producto.nombre}</h2>
+                    <p>Precio: ${producto.precio}</p>
+                    <p>Cantidad: {producto.quantity}</p>
                 </div>
             ))}
             <hr />
@@ -32,7 +32,7 @@ const Cart = () => {
             <button onClick={clearCart}>Vaciar Carrito</button>
         </div>
     );
-    console.log(item);
+    console.log(producto);
 };
 
 

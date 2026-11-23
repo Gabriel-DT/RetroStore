@@ -1,20 +1,30 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import { Layout } from './componentes/Layout/Layout';
-import { ItemListContainer } from './componentes/Item/ItemListContainer/ItemListContainer';
+import { ProductoListContainer } from './componentes/Producto/ProductoListContainer/ProductoListContainer';
 import { FormularioProducto } from './componentes/ProductoFormulario/ProductoFormulario/ProductoFormulario';
-import Productos from './componentes/productos';
+import { Productos } from './componentes/productos';
+import { ProductoDetalleListContainer } from './componentes/ProductoDetalle/ProductoDetalleListContainer/ProductoDetalleListContainer';
 import { FormularioContainer } from './componentes/ProductoFormulario/ProductoFormularioContainer/ProductoFormularioContainer';
+import { EquipoListContainer } from './componentes/Equipo/EquipoListContainer/EquipoListContainer';
 import Cart from './componentes/Cart/Cart';
 
 function App() {
   return (
-    <Layout>
-      {/* Todo lo que pongamos acá adentro irá donde estaba {children} */}
-      <br></br>
-      <ItemListContainer/>
-      <FormularioContainer/>
-      <Cart/>
-    </Layout>
+    <Routes>
+      <Route element={<Layout />}> 
+
+      <Route path="/" element={<h1>Inicio</h1>} />
+      <Route path="/productos" element={<ProductoListContainer/>} />
+      <Route path="/nosotros" element={<EquipoListContainer/>} />
+      <Route path="/nuevo" element={<FormularioContainer/>} />
+      <Route path="/cart" element={<Cart/>} />
+      <Route path="/producto/:id" element={<ProductoDetalleListContainer />} />
+
+      <Route path="*" element={<> <h1>404 - Página no encontrada</h1> <br /> <a href="/">Volver al inicio</a> </> } />
+
+      </Route>
+    </Routes>
   );
 }
 export default App;

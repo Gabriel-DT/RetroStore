@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Productos({ Mensaje }) {
+export function Productos({ Mensaje }) {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [cargando, setCargando] = useState(true);
@@ -50,4 +50,3 @@ function Productos({ Mensaje }) {
         </div>
     );
 }
-export default Productos;

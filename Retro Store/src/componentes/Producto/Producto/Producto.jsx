@@ -1,11 +1,12 @@
-// El Exhibidor (Item): Este es el componente presentacional puro. Es el encargado de la apariencia
+// El Exhibidor (Producto): Este es el componente presentacional puro. Es el encargado de la apariencia
 
 import { useState, useEffect } from "react";
-import styles from './Item.module.css'
+import styles from './Producto.module.css'
 import { useCart } from "../../../context/CartContext";
+import { Link } from "react-router-dom";
 
 // Recibe las props usando destructuring
-export function Item({ id, nombre, precio, stock, imagen }) {
+export function Producto({ id, nombre, precio, stock, imagen }) {
     const [cantidad, setCantidad] = useState(0);
     const [esFavorito, setEsFavorito] = useState(false)
 
@@ -48,11 +49,15 @@ export function Item({ id, nombre, precio, stock, imagen }) {
             <p>Precio: ${precio}</p>
             <p>Stock disponible: {stock}</p>
             <img src={imagen} className={styles.imagen} alt="" />
+           <button>
+                <Link to={`/producto/${id}`}>Más información</Link>
+            </button>
             <div className={styles.contador}>
                 <button onClick={decrementar}>-</button>
                 <p style={{ margin: '0 10px' }}>{cantidad}</p>
                 <button onClick={incrementar}>+</button>
             </div>
+
             {/* Cuando le boton detecta un clic (onClick), se ejecuta la función */}
             <button onClick={handleAddToCart}>Comprar</button>
         </div>

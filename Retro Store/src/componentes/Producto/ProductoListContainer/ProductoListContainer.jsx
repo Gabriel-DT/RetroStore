@@ -1,10 +1,10 @@
-// El Cerebro (ItemListContainer): Es el componente contenedor. Su única misión es tener la lógica y conseguir los datos.
+// El Cerebro (ProductoListContainer): Es el componente contenedor. Su única misión es tener la lógica y conseguir los datos.
 
-import { ItemList } from "../ItemList/ItemList";
+import { ProductoList } from "../productoList/ProductoList";
 import { useState, useEffect } from "react";
 
 
-export function ItemListContainer({ }) {
+export function ProductoListContainer({ }) {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [cargando, setCargando] = useState(true);
@@ -50,7 +50,7 @@ export function ItemListContainer({ }) {
     }
 
     return (
-        <ItemList
+        <ProductoList
             productos={productos}
             mensaje="Nuestros productos destacados"
         />

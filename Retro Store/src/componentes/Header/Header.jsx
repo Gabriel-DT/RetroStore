@@ -19,8 +19,8 @@ const totalItems = getCartQuantity(); // Obtengo la cantidad total de productos 
           <Link to="/nosotros" className={styles.navButton}>
             Equipo
           </Link>
-          <Link to="/nuevo" className={styles.navButton}>
-            Nuevo Producto
+          <Link to="/gestion" className={styles.navButton}>
+            Gestion de productos
           </Link>
           <Link to="/cart" className={styles.navButton}>
             Carrito ({ totalItems > 0 && <span>{totalItems}</span> })

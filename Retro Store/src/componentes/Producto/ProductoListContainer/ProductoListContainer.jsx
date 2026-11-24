@@ -4,6 +4,7 @@ import { ProductoList } from "../ProductoList/ProductoList";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firestore/config";
+import { readProductos } from "../../../services/productosServices";
 
 
 export function ProductoListContainer({ }) {
@@ -16,8 +17,8 @@ export function ProductoListContainer({ }) {
     // Si pongo una dependencia puntual se ejecuta cuando se actualiza esa dependencia.
 
     useEffect(() => {
-        async function obtenerProductos() {
-            try {
+        // async function obtenerProductos() {
+        //     try {
                 // const respuesta = await fetch('/data/productos.json')
 
                 // if (!respuesta.ok) {
@@ -28,20 +29,24 @@ export function ProductoListContainer({ }) {
                 // const datos = await respuesta.json();
                 // setProductos(datos);
 
-                const productosdb = collection(db, 'productos');
-                getDocs(productosdb).then((res) => {
-                    setProductos(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-                });
+                // const productosdb = collection(db, 'productos');
+                // getDocs(productosdb).then((res) => {
+                //     setProductos(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+                // });
 
-            } catch (error) {
+                readProductos().then((res) => {
+                    setProductos(res);
+                    console.log('Productos obtenidos de Firestore:', res);
+                })
+
+            .catch ((error) => {
                 setError(error.message);
+            })
 
-            } finally {
+            .finally(() => {
                 setCargando(false);
-            }
-        }
+            });
 
-        obtenerProductos();
     }, []);
     // como la dependencia está vacia sólo se ejecuta una vez
 
@@ -52,7 +57,10 @@ export function ProductoListContainer({ }) {
         return <p>Error: {error}</p>;
     }
 
-    if (productos.length === 0) {
+    if (productos === null || productos === undefined) {
+        return <p>No se encontraron productos.</p>;
+    }
+    else if (productos.length === 0) {
         return <p>No hay productos disponibles.</p>;
     }
 

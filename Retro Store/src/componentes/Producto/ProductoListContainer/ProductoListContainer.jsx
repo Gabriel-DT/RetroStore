@@ -2,6 +2,8 @@
 
 import { ProductoList } from "../ProductoList/ProductoList";
 import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firestore/config";
 
 
 export function ProductoListContainer({ }) {
@@ -16,15 +18,20 @@ export function ProductoListContainer({ }) {
     useEffect(() => {
         async function obtenerProductos() {
             try {
-                const respuesta = await fetch('/data/productos.json')
+                // const respuesta = await fetch('/data/productos.json')
 
-                if (!respuesta.ok) {
-                    throw new Error(
-                        'No se pudo cargar la información de los productos'
-                    );
-                }
-                const datos = await respuesta.json();
-                setProductos(datos);
+                // if (!respuesta.ok) {
+                //     throw new Error(
+                //         'No se pudo cargar la información de los productos'
+                //     );
+                // }
+                // const datos = await respuesta.json();
+                // setProductos(datos);
+
+                const productosdb = collection(db, 'productos');
+                getDocs(productosdb).then((res) => {
+                    setProductos(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+                });
 
             } catch (error) {
                 setError(error.message);
